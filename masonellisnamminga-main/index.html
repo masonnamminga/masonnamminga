@@ -15,7 +15,7 @@
     <div id="progressbar"></div>
     <div id="scrollpath"></div>
 
-    <img class="d-block mx-auto mt-3" width="70%" src="./img/title/masonnamminga.png">
+    <img class="d-block mx-auto mt-3" width="70%" style="padding:15px;" src="./img/title/masonnamminga.png">
     <div class="d-flex flex-row mx-5 my-2 justify-content-around flex-wrap" id="navbar">
         <!--mt-5 : (M)argin on the (T)op of the element - same as 'margin-top' in css
                 d-flex: (D)isplay as (flex)box - same as 'display: flex' in css
@@ -29,19 +29,7 @@
                 <!-- root index file is ./ (same as writing index.html but matches the others) -->
                 <img class="icon" src="./img/icons/home.png">
             </a>
-            <h2>Place Holder</h2>
-        </div>
-        <div>
-            <a href="./about/">
-                <img class="icon" src="./img/icons/user.png">
-            </a>
-            <h2>About</h2>
-        </div>
-        <div>
-            <a href="./contact/">
-                <img class="icon" src="./img/icons/phone.png">
-            </a>
-            <h2>Contact</h2>
+            <h2>Home</h2>
         </div>
         <div>
             <a href="./school/">
@@ -50,45 +38,52 @@
             <h2>Academics</h2>
         </div>
         <div>
-            <a href="./bobby/">
-                <img class="icon" src="./img/icons/earth.png">
-            </a>
-            <h2>Bobby the Lamp</h2>
-        </div>
-        <div>
             <a href="./projects/">
                 <img class="icon" src="./img/icons/rocket.png">
             </a>
             <h2>Projects</h2>
         </div>
+        <div>
+            <a href="./bird/">
+                <img class="icon" src="./img/icons/camera.png">
+            </a>
+            <h2>Bird Camera</h2>
+        </div>
+        <div>
+            <a href="./bobby/">
+                <img class="icon" src="./img/icons/earth.png">
+            </a>
+            <h2>Bobby the Lamp</h2>
+        </div>
+
     </div>
 
     <main class="container my-5">
         <div class="d-flex align-items-center flex-lg-row flex-column">
             <div class="d-flex align-items-center flex-column">
-                <p>Hello there, and welcome to my internet home! I am glad you stopped by.
-                    My name is Mason Namminga and I am a high school sophomore attending Lynden High
-                    School. I am currently the FBLA community service coordinator, cross country runner, and
-                    technology enthusiast. I was born in Colorado and moved to Lynden, WA as a child. While growing
-                    up I discovered my passion to build, discover, and learn. I have always enjoyed the endeavor of
-                    learning new skills and am always eager to try something new. If I was to pinpoint the exact
-                    date that I began my journey of creation it would be when I got my first robotics kit. This
-                    sparked a journey of making and discovering. Check out all the best projects that I have
-                    produced over the years on the projects page, linked on the navigation bar. With this desire to
-                    learn began my journey of learning to code. I began my coding venture when creating excel
-                    spreadsheets, and PowerPoints that incorporated Microsoft VBA to add custom elements. After
-                    learning the basics of this language, I set out to create a custom hand-coded website to display
-                    all of the things that I had built over the summer. This endeavor helped create the passion for
-                    web development that I have pursued throughout my high school career. See more about my academic
-                    ventures on the Academics page. If you have any questions or comments that you would like to
-                    send my way, please navigate to the contact page for a quick and easy way to get in touch. 
-                    Finally, view the attached file for the most up-to-date version of my resume.
-                </p>
-        
-                <a class="btn btn-primary btn-gradient" href='./doc/pdf/resume.pdf' target="_blank">     RESUME     </a>
-            </div>
-            <img class="portrait p-3" src="./img/family/mason.jpeg">
 
+                <p style="padding-top: 50px; padding-left: 50px; padding-right: 50px;">
+                    <b style="font-size:18px;" >Hello there, and welcome to my internet home! </b>
+                    <br>
+                    <br>
+                    I am glad you stopped by. My name is Mason: a Junior at Lynden High School. I am currently the FBLA Vice President, and an active member of NHS. I was born in Colorado and moved to Lynden, WA. While growing up, I became aware of my passion to build, create, discover, and learn. I have always enjoyed trying out new hobbies and skills. Check out all the best projects that I have produced over the years in my portfolio. After many months of development this site was created in HTML, CSS, and JS as a portfolio of my academic and personal projects.
+                </p>
+
+                <div class="float-container">
+
+                    <div class="float-child">
+                        <a class="btn btn-primary btn-gradient" href='./doc/pdf/resume.pdf' target="_blank">     RESUME     </a>
+                    </div>
+                    
+                    <div class="float-child">
+                        <a class="btn btn-primary btn-gradient" href='./contact/' target="_blank">     CONTACT     </a>
+                    </div>
+                    
+                  </div>
+                
+
+            </div>
+            <img class="portrait p-3" src="./img/photos/mason.jpg">
         </div>
         <a href="dice.html" target="_blank" class="easteregg">
             If you can read this click here to see my first JavaScript game! :)
