@@ -1,8 +1,7 @@
-Note from Mason:
-    This site was constructed over the course of many months with the help 
-    of many talented people such as Jackson Graddon (jackgraddon.com) and 
-    through the skills developed in the Web Design course offered at Lynden
-    High School, as well as the resources below.
+This site was constructed over the course of many months with the help 
+of many talented people such as Jackson Graddon (jackgraddon.com) and 
+through the skills developed in the Web Design course offered at Lynden
+High School, as well as the resources below.
 
 Attribution & Licensing Library:
     Share Button: https://codepen.io/ayoisaiah/pen/YbNazJ (Located on Bobby the Lamp page)
