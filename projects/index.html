@@ -13,6 +13,8 @@
 
     <!-- Personal CSS -->
     <link rel="stylesheet" href="../style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -43,12 +45,6 @@
             <h2>Projects</h2>
         </div>
         <div>
-            <a href="../bird/">
-                <img class="icon" src="../img/icons/camera.png">
-            </a>
-            <h2>Bird Camera</h2>
-        </div>
-        <div>
             <a href="../bobby/">
                 <img class="icon" src="../img/icons/bulb.png">
             </a>
@@ -63,58 +59,188 @@
                 taking things apart and putting them back together. This knack for understanding how things work
                 has helped pave the way for my passion to create. Throughout the years I have gradually improved
                 moving from simple electronics in my childhood to more advanced software-driven microcomputers
-                such as Arduino and Raspberry Pi in my teen years. Some of the projects that I enjoy working on 
-                the most involve coding via Raspberry Pi, Arduino, Microsoft VBA, HTML & CSS, and JavaScript. 
+                such as Arduino and Raspberry Pi in my teen years. Some of the projects that I enjoy working on
+                the most involve coding via Raspberry Pi, Arduino, Microsoft VBA, HTML & CSS, and JavaScript.
                 I also enjoy woodworking, 3D printing, and graphic design.
             </p>
         </div>
 
-        <h1>Project Build Guide Portfolio</h1>
+        <h1>The Projects I'm Most Proud Of 💜</h1>
         <div class="d-flex flex-row justify-content-around flex-wrap">
+
+
             <div class="p-2">
-                <a href="https://www.youtube.com/channel/UCOc9DRZJR_CAuvI6im9H11A" target="_blank">
-                    <img id="projects" src="../img/buttons/youtube.png">
+                <a target="_blank">
+                    <img data-toggle="modal" data-target="#bobby" id="projects" src="../img/buttons/bobby.png">
                 </a>
             </div>
+
             <div class="p-2">
-                <a href="https://www.etsy.com/shop/MasonsOriginals?ref=profile_header" target="_blank">
-                    <img id="projects" src="../img/buttons/originals.png">
+                <a target="_blank">
+                    <img data-toggle="modal" data-target="#snack" id="projects" src="../img/buttons/snack.png">
                 </a>
             </div>
+<!-- 
             <div class="p-2">
-                <a href="https://www.flowcode.com/page/bobbythelamp" target="_blank">
-                    <img id="projects" src="../img/buttons/bobby.png">
+                <a target="_blank">
+                    <img data-toggle="modal" data-target="#bobby" id="projects" src="../img/buttons/drinks.png">
                 </a>
-            </div>
+            </div> -->
+
             <div class="p-2">
-                <a href="https://iliketomakestuff.com/make-quiz-game-buttons/" target="_blank">
-                    <img id="projects" src="../img/buttons/buzzers.png">
+                <a target="_blank">
+                    <img data-toggle="modal" data-target="#book" id="projects" src="../img/buttons/bookbot.png">
                 </a>
             </div>
         </div>
         <div class="d-flex flex-row justify-content-around flex-wrap">
-            <div class="p-2">
-                <a href="../doc/pdf/comingsoon.pdf" target="_blank">
-                    <img id="projects" src="../img/buttons/escaperooms.png">
-                </a>
-            </div>
-            <div class="p-2">
-                <a href="../doc/pdf/comingsoon.pdf" target="_blank">
-                    <img id="projects" src="../img/buttons/bookbot.png">
-                </a>
-            </div>
-            <div class="p-2">
-                <a href="../doc/pdf/comingsoon.pdf" target="_blank">
-                    <img id="projects" src="../img/buttons/drinks.png">
-                </a>
-            </div>
-            <div class="p-2">
-                <a href="../doc/pdf/comingsoon.pdf" target="_blank">
-                    <img id="projects" src="../img/buttons/microsoftvba.png">
-                </a>
-            </div>
+        </div>
         </div>
     </main>
+
+
+    <div class="modal fade" id="book" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">The Bookbot</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <img src="../img/photos/book1.jpeg" alt="" width="75%" height="auto" style="border-radius: 3%;">
+                        <br>
+                        <br>
+                        <img src="../img/photos/book2.jpeg" alt="" width="75%" height="auto" style="border-radius: 3%;">
+                        <p style="color: black; font-family:Helvetica Neue"><i>The Bookbot holiday display</i></p>
+                    </center>
+                    <br>
+                    <br>
+                    <h5>The Story</h5>
+                    <p style="color: black; font-family:Helvetica Neue">
+                        The Bookbot was a project that I took on simply because I wanted to use up some scrap wood,
+                        however it has evolved into so much more. Starting in 2018 I constructed a small box with hand
+                        painted lettering that said “The Book Shack.” After 2 more iterations and a whole lot more
+                        waterproofing we now have the Bookbot, take a book and leave a book library for my neighborhood.
+                        The Bookbot features a screen as a head that I update with seasonal displays, color changing
+                        lights on the body and arms, as well as speakers that play calming music for those that stop to
+                        take a look!
+                    </p>
+                    <br>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="bobby" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bobby the Lamp</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <img src="../img/photos/bobby1.jpeg" alt="" width="75%" height="auto" style="border-radius: 3%;">
+                    </center>
+                    <br>
+                    <br>
+                    <h5>The Story</h5>
+                    <p style="color: black; font-family:Helvetica Neue">
+                        Bobby the Lamp is an internet of things art project representing the unity of the internet by
+                        allowing anyone in the world to change the color at any time of the day. It is made of a 2x3 foot
+                        light panel hanging on a wall in my home. The light diffuser was salvaged from an old TV and the
+                        frame is made from reclaimed wood.
+                    </p>
+                    <br>
+                    <h5>Putting it Together</h5>
+                    <br>
+                    <center>
+                        <img src="../img/photos/bobby2.jpeg" alt="" width="75%" height="auto" style="border-radius: 3%;">
+                        <p style="color: black; font-family:Helvetica Neue"><i>Laying down LED light strip in the frame</i></p>
+
+                    </center>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="snack" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Smart Snack Machine</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <img src="../img/photos/snack.jpeg" alt="" width="75%" height="auto" style="border-radius: 5%;">
+                    </center>
+                    <br>
+                    <br>
+                    <h5>The Story</h5>
+                    <p style="color: black; font-family:Helvetica Neue">
+                        The Smart Snack Machine had always been an idea that was in the back of my head, but it wasn't
+                        until I was introduced to the Hack Club Winter Hardware Wonderland program that I realized that
+                        I could make this dream a reality. After creating a proposal and budget I presented my idea to
+                        the Hack Club team and received the portion of the funds needed to create the project. After
+                        about a year of working, a lot of failure and experimentation, I am very proud to share the
+                        Smart Snack Machine. It features a variety of ways to "pay" for a snack, including a mobile pay
+                        option where users make an account with the app on their phones, a coin acceptor, and my
+                        favorite feature, games! Users can play games on the integrated touch screen to earn a snack.
+                    </p>
+                    <br>
+
+                    <h5>How I Made It</h5>
+                    <p style="color: black; font-family:Helvetica Neue">
+                        The machine is made of wood, and plexiglass, as well as barn wire that was wrapped up to make
+                        the coils. The coils are run by an array of 14 servo motors that are controlled by 2 NodeMCU
+                        boards. These boards are connected to WiFi to receive signals from the Raspberry Pi computer
+                        that is attached to the touch screen. An interesting aspect of controlling the servos over WiFi
+                        is that in the future I can create an app that allows users to order from their phone, from
+                        anywhere in the world. (If they want to "gift" a snack to someone...) The coin acceptor is run
+                        by an Arduino Leonardo that is directly connected to the Raspberry Pi. Finally a QR code
+                        scanning camera was added to be able to scan the user's "Mobile Wallet Key" if they choose to
+                        pay with credits that are in the Snack Machine App.
+                    </p>
+                    <br>
+
+                    <h5>Screenshots of UI</h5>
+                    <img src="../img/photos/ui1.png" alt="" width="100%" height="auto">
+                    <img src="../img/photos/ui2.png" alt="" width="100%" height="auto">
+                    <img src="../img/photos/ui3.png" alt="" width="100%" height="auto">
+                    <img src="../img/photos/ui4.png" alt="" width="100%" height="auto">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Pagescript -->
     <script type="text/javascript">
@@ -126,6 +252,15 @@
             progress.style.height = progressHeight + "%";
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
