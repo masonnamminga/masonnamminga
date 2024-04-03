@@ -85,6 +85,7 @@ function save() {
     };
 
     database.ref().update(updates);
+    feedthem();
     //shows the modal after 5 seconds (thats how long the loader is shown for)
     setTimeout(function() {
     $('#sent').modal('show');
