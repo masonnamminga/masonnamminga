@@ -195,11 +195,12 @@ $('#load1').on('click', function() {
 });
 
 //birdfeeder function
+rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P
+https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=0
+
 function feedthem() {
-    fetch(`https://ny3.blynk.cloud/external/api/update?token=DH6XC-QeYBzNR3dr-fGrhDA2wv3tZy3o&v0=180`);
-    fetch(`https://api.voicemonkey.io/trigger?access_token=4178712fbe407e30e3373775020db8d0&secret_token=7430de5ed7a2b2adc1fe8a380f5b0292&monkey=bird-green&announcement=Hello%20monkey`);
-    
-    setTimeout(() => {fetch(`https://ny3.blynk.cloud/external/api/update?token=DH6XC-QeYBzNR3dr-fGrhDA2wv3tZy3o&v0=0`); fetch(`https://api.voicemonkey.io/trigger?access_token=4178712fbe407e30e3373775020db8d0&secret_token=7430de5ed7a2b2adc1fe8a380f5b0292&monkey=bird-red&announcement=Hello%20monkey`); 
+    fetch(`https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=180`);    
+    setTimeout(() => {fetch(`https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=0`); 
   }, 3000);
   } 
 
