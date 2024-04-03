@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+
+h1{
+    font: 0em/1 "Baloo";
+    background: linear-gradient(to right,  #6A9CFD, #ff8e31ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
