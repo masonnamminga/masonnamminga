@@ -195,14 +195,43 @@ $('#load1').on('click', function() {
     }, 3000);
 });
 
-//birdfeeder function
-rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P
-https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=0
+//birdfeeder function i used to just use a fetch request but that stopped working in safari 
 
 function feedthem() {
-    fetch(`https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=180`);    
-    setTimeout(() => {fetch(`https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=0`); 
-  }, 3000);
-  } 
+  var xhr1 = new XMLHttpRequest();
+  xhr1.open('GET', 'https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=180', true);
+  xhr1.onreadystatechange = function() {
+    if (xhr1.readyState === 4 && xhr1.status === 200) {
+      console.log('First request successful');
+      setTimeout(function() {
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open('GET', 'https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=0', true);
+        xhr2.onreadystatechange = function() {
+          if (xhr2.readyState === 4 && xhr2.status === 200) {
+            console.log('Second request successful');
+            // You can perform further actions here upon successful response
+          }
+        };
+        xhr2.send();
+      }, 2000);
+    }
+  };
+  xhr1.send();
+}
+
+
+//this button is for testing the birdfeeder without having to use the form each time
+function promptPassword(event) {
+  event.preventDefault();
+  var password = prompt("Please enter the password:");
+  if (password === "123") {
+    document.getElementById("admin").style.display = "block";
+  } else {
+    alert("Incorrect password!");
+  }
+}
+document.getElementById("pword").addEventListener("click", promptPassword);
+
+
 
 
