@@ -43,7 +43,7 @@
         <div class="modal-body">
           <p>✅ Your request was sucessfully sent to the bird feeder.</p>
           <p>⏯️ Click the <b>play button</b> on the livestream video.</p>
-          <p>⏱️ Wait about for the food to dispence. (Can take up to a minute.)</p>
+          <p>⏱️ Wait about for the food to dispence. (5-10 second delay)</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Okay</button>
@@ -51,6 +51,28 @@
       </div>
     </div>
   </div>
+
+  <!-- modal for error -->
+  <div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Request Sent</h5>
+      </div>
+      <div class="modal-body">
+        <h3>👀 Looks like we're out of birdseed...</h3>
+        <p>Please let me know by clicking this button so I can get it refilled.</p>
+          <center>
+            <button style="background-color: #006100ad; color:white;" class="btn btn-primary" onclick="location.href='mailto:contact@masonnamminga.com?subject=Bird Feeder Out of Food&body=Please refill the birdfeeder with birdseed.'">Refill Bird Seed</button>
+          </center>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <center>
@@ -78,9 +100,10 @@
         <p>4. ✅ Done! Watch the bird food dispense, and your name added to the log below.</p>
         <br>
         <center>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#how">
-            How was Smart Bird Feeder made?
-          </button>
+          <div style="display: inline-block;">
+            <button style="display: inline;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#how">How was Smart Bird Feeder Made</button>
+            <button style="background-color: #ff0000af; color:white;" type="button" class="btn" data-toggle="modal" data-target="#help">Food didn't dispense?</button>
+          </div>
         </center>
         <br>
       </div>
@@ -116,6 +139,8 @@
       </div>
     </div>
   </div>
+
+
   <div class="col-md-6" style="padding-top: 20px;">
     <div class="col-md-12"
       style="border-radius:15px; padding-top: 1px; box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.233);">
@@ -162,6 +187,8 @@
     </div>
   </div>
 
+
+
   <div class="col-md-12" style="padding-top: 20px;">
     <div class="col-md-12"
       style="border-radius:15px; padding-top: 1px; box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.233);">
@@ -189,6 +216,7 @@
       </div>
     </div>
   </div>
+
 
   <div class="col-md-12" style="padding-top: 50px; text-align: center;">
     <p><a href="mailto:contact@masonnamminga.com">Report a problem</a></p>
