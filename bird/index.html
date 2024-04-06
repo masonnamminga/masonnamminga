@@ -14,15 +14,16 @@
 
   <br>
   <!-- modal for the learn about birdfeeder button -->
-  <div class="modal fade" id="how" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div class="modal fade" id="how" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">How was Smart Bird Feeder Made?</h5>
         </div>
         <div class="modal-body">
-          <p>Let me tell you all about it...</p>
+          <center>
+            <img src="how.png" id="how-image" width="500">
+          </center>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -30,6 +31,7 @@
       </div>
     </div>
   </div>
+  
   <!-- modal for sucessful request sent -->
   <div class="modal fade" id="sent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
@@ -192,7 +194,7 @@
     <p><a href="mailto:contact@masonnamminga.com">Report a problem</a></p>
     <button id="pword">🔐</button> 
       <center>
-        <button style="display: none" id="admin" type="button" onclick="feedthem();">Test1</button>
+        <button style="display: none" id="admin" type="button" onclick="feedthem();">Feed the Birds</button>
       </center>
     <br>
     <br>

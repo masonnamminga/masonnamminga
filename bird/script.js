@@ -213,7 +213,7 @@ function feedthem() {
           }
         };
         xhr2.send();
-      }, 2000);
+      }, 1000);
     }
   };
   xhr1.send();
@@ -223,11 +223,11 @@ function feedthem() {
 //this button is for testing the birdfeeder without having to use the form each time
 function promptPassword(event) {
   event.preventDefault();
-  var password = prompt("Please enter the password:");
+  var password = prompt("🔐 Password Protected");
   if (password === "123") {
     document.getElementById("admin").style.display = "block";
   } else {
-    alert("Incorrect password!");
+    alert("❌ Incorrect password.");
   }
 }
 document.getElementById("pword").addEventListener("click", promptPassword);
