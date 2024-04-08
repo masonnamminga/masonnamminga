@@ -101,34 +101,28 @@ function fillCurrentTime() {
         document.getElementById('time').value = timeString;
     }
 
-//gets the users coordinates, converts it to a city, state format and puts in a read only input field.
-function getUserCity() {
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-
-      // Make a request to Nominatim API for reverse geocoding (YAY FREE API!!)
-      fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`)
-        .then(response => response.json())
-        .then(data => {
-          const city = data.address.city || data.address.town || data.address.village || data.address.hamlet;
-          const state = data.address.state;
-          if (city && state) {
-            const location = `${city}, ${state}`;
-            document.getElementById("zip").value = location;
-          } else {
-            document.getElementById("zip").placeholder = "City not found";
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    });
-  } else {
-    console.log("Geolocation is not supported by this browser.");
-  }
-}
+    function getUserCity() {
+      // Get the ZIP code from the input field
+      var zipCode = document.getElementById("zip").value;
+  
+      // Make a request to the ZIP code API
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://api.zippopotam.us/us/" + zipCode, true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          // Parse the JSON response
+          var response = JSON.parse(xhr.responseText);
+  
+          // Extract city and state information
+          var city = response.places[0]["place name"];
+          var state = response.places[0]["state"];
+  
+          // Update the input field with city and state
+          document.getElementById("zip").value = city + ", " + state;
+        }
+      };
+      xhr.send();
+    }
 
 
 //clock for real time vs stream time 
