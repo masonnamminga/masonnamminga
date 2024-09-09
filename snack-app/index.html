@@ -1,298 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vending Machiene App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="module" src="script.js"></script>
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <title>Vend Snacks</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Baloo');
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .app-content, .add-to-homescreen {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+    .add-to-homescreen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('download.png') no-repeat center center;
+      background-size: cover;
+    }
+    .app-content {
+      text-align: center;
+    }
+
+
+
+
+
+
+
+
+    .loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.logo {
+    width: 0;
+    height: 0;
+    transition: width 1s, height 1s;
+}
+
+.loaded.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.animate.logo {
+    animation: wooshToTop 1s forwards;
+}
+
+.animate.app-name {
+    animation: wooshToTop 1s forwards;
+}
+
+.animate.start-button {
+    animation: moveToBounds 1s forwards;
+}
+
+.app-name {
+    font-size: 35px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 1s;
+    padding-top: 50px;
+    font: 3em/0 "Baloo";
+
+}
+
+.loaded.app-name {
+    opacity: 1;
+}
+
+.start-button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 1s;
+    zoom:150%;
+
+
+}
+
+.loaded.start-button {
+    opacity: 1;
+}
+
+@keyframes wooshToTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20vh);
+    }
+}
+
+@keyframes moveToBounds {
+    0% {
+        bottom: 20px;
+    }
+    100% {
+        bottom: 15vh;
+    }
+}
+.tagline {
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+    margin-top: 10px;
+}
+
+.loaded.tagline {
+    opacity: 1;
+}
+.animate.tagline {
+    animation: wooshToTop 1s forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+  position: relative;
+  background-color: #53B1FD;
+  color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  min-width: 200px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  outline: none;
+  box-shadow: 1px 1px 4px 1px transparent;
+  transition: box-shadow 300ms ease-in-out;
+}
+.btn:hover {
+  box-shadow: 1px 1px 6px 1px #ffffff;
+}
+.btn:before {
+  content: "";
+  position: absolute;
+  z-index: 500;
+  transform: rotateX(180deg);
+  color: #fff;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: none;
+}
+.btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  opacity: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color:#9A6AFE;
+  border-radius: 50px;
+  transition: width 10ms 600ms ease-in-out, background-color 300ms ease-in, opacity 250ms 300ms ease-in;
+}
+
+.is-active {
+  transform: rotateX(180deg);
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 1px transparent !important;
+  transition: transform 300ms ease-in-out, background-color 300ms ease-in;
+}
+.is-active:after {
+  opacity: 1;
+  background-color:#9A6AFE;
+  width: 100%;
+  transition: width 1s 0.5s ease-in-out, background-color 300ms 300ms ease-in, opacity 250ms 300ms ease-in;
+}
+.is-active:before {
+  opacity: 1;
+  transition: opacity 250ms 1.5s ease-in;
+}
+  </style>
 </head>
+<body>
 
+  <!-- Add to Home Screen Fullscreen Image -->
+  <div class="add-to-homescreen"></div>
 
-<body style="text-align: center;">
-    <br>
-<center>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_egmSxc.json"  background="transparent"  speed="1"  style="width: 250px; "  loop  autoplay></lottie-player>
-</center>
-    <h3 id="title">Smart Snack Machine <br> Mobile Wallet</h3>
+  <!-- Main App Content -->
+  <div class="app-content">
+    <div class="loading-screen">
+        <div class="logo-container">
+            <img src="logo.png" alt="App Logo" class="logo">
+        </div>
+        <h1 class="app-name">Vend</h1>
+<h2 class="tagline">Smart snacking, done right.</h2>
+
   
-    <button type="button" class="btn btn-primary" id="Create">
-        Create New Wallet
-    </button>
-   
-    <button type="button" class="btn btn-primary" id="Login">
-        Login to Wallet
-    </button>
+        <div class="start-button">
+          <button class="btn">Start</button>
+
+        </div>
+        
+    </div>
+  </div>
+
+  <script>
+
+
+
+
+
+    // Function to detect if the app is running in standalone mode (added to home screen)
+    function isInStandaloneMode() {
+      return (window.navigator.standalone === true) || window.matchMedia('(display-mode: standalone)').matches;
+    }
+
+    // On page load, show content based on whether the app is installed
+    window.addEventListener('load', () => {
+      const addToHomeScreenPrompt = document.querySelector('.add-to-homescreen');
+      const appContent = document.querySelector('.app-content');
+
+      if (isInStandaloneMode()) {
+        appContent.classList.add('show');
+        addToHomeScreenPrompt.classList.remove('show');
+      } else {
+        addToHomeScreenPrompt.classList.add('show');
+      }
+    });
+
+
+
     
-<!-- create account modal -->
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create an Account</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="text-align: center;">
-
-                    <div id="enterDetails">
-                        <h4>Mobile Wallet <br> Authenication Key</h4>
-                        <input id="enterID" type="text" readonly>
-                        <br>
-                        
-                        <br>
-                        <button class="btn btn-secondary" id="generateID">Generate Unique Key</button>
-                        <p><i>Click to create key. 👆</i></p>
-                  
-                        <hr>
-                        <h4>Name 🕺</h4>
-                        <input id="enterName" type="text">
-                        <div style="display:none">
-                            <h4>Age</h4>
-                            <input id="enterAge" type="number" value="5">
-                        </div>
-                        <br>
-                        <br>
-                        <h4>Pin 🔐</h4>
-                        <div>
-                            <span tooltip="Create something easy & unique." flow="down"><input id="enterPin"
-                                     type="number"></span>
-                        </div>
-                        <br><br>
-                        <div style="display: none;">
-                            <button>INSERT</button>
-                            <button id="update">UPDATE</button>
-                            <button id="remove">REMOVE</button> <br><br>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="insert" type="button" class="btn btn-primary" data-dismiss="modal">Create
-                        Account</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!-- login to account modal -->
-    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Login to Account</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div id="findByNameAndPin">
-                        <center>
-                            <script
-                                src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                            <lottie-player
-                                src="https://lottie.host/18cc40e6-922e-4469-9293-29faddcfcdb3/MjyoeG1cmM.json"
-                                background="##FFFFFF" speed="1" style="width: 175px; height: 175px" loop autoplay
-                                direction="1" mode="normal"></lottie-player>
-                        </center>
-                        <h4>Name 🕺</h4>
-                        <input id="findNameInput" type="text">
-                        <br><br>
-                        <h4>Pin 🔐</h4>
-                        <input id="findPinInput" type="number"> <br><br>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="findByNameAndPinBtn" type="button" class="btn btn-primary"
-                        data-dismiss="modal">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <!-- contacting server -->
-    <div class="modal fade bd-example-modal-sm1" id="modal3" tabindex="-1" role="dialog"
-        aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content" style="align-items: center;">
-                <br>
-                <h3>Contacting Server</h3>
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player src="https://lottie.host/1f256429-179c-48e0-9c8b-5075f3c529b8/JK7egnEKdd.json"
-                    background="##fff" speed="1" style="width: 300px; height: 300px" loop autoplay direction="1"
-                    mode="normal"></lottie-player>
-            </div>
-        </div>
-    </div>
+    window.addEventListener('load', () => {
+    const logo = document.querySelector('.logo');
+    const appName = document.querySelector('.app-name');
+    const tagline = document.querySelector('.tagline');
+    const startButton = document.querySelector('.start-button');
 
-    <!-- creating account (hammer) -->
-    <div class="modal fade bd-example-modal-sm2" id="modal4" tabindex="-1" role="dialog"
-        aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content" style="align-items: center;">
-                <br>
-                <h3>Creating Account</h3>
+    // Logo animation
+    setTimeout(() => {
+        logo.classList.add('loaded');
+    }, 500);
 
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player src="https://lottie.host/5f22d1d7-0e9b-4a02-84cb-bb0b64bc9958/93gxjWy5c1.json"
-                    background="##FFFFFF" speed="1" style="width: 200px; height: 200px" loop autoplay direction="1"
-                    mode="normal"></lottie-player>
-                <br><br>
-            </div>
-        </div>
-    </div>
+    // App name animation
+    setTimeout(() => {
+        appName.classList.add('loaded');
+    }, 1500);
 
-    <!-- your in -->
-    <div class="modal fade bd-example-modal-sm3" id="modal5" tabindex="-1" role="dialog"
-        aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content" style="align-items: center;">
-                <br>
-                <h3>You're In!</h3>
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player src="https://lottie.host/634f2ff8-5405-4731-ad97-82a5607c0198/VBvzjRdkQn.json"
-                    background="#FFFFFF" speed="1" style="width: 300px; height: 300px" loop autoplay direction="1"
-                    mode="normal"></lottie-player>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Take me to Login</button>
-                <br>
-            </div>
-        </div>
-    </div>
+    // Tagline animation (after the app name)
+    setTimeout(() => {
+        tagline.classList.add('loaded');
+    }, 2000);
 
-    <!-- account does not exist -->
-    <div class="modal fade bd-example-modal-sm3" id="modal6" tabindex="-1" role="dialog"
-        aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content" style="align-items: center;">
-                <br>
-                <h3>Account Doesn't Exist...</h3>
-                <br>
-                <h6>Did you forget your login?</h6>
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player src="https://lottie.host/477d441f-c83f-41fc-8877-af8e91ca23dd/6baUZgPwP7.json"
-                    background="#fff" speed="1" style="width: 300px; height: 300px" loop autoplay direction="1"
-                    mode="normal"></lottie-player>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Try Again</button>
-                <br>
-            </div>
-        </div>
-    </div>
-
-
-<!-- searching for account -->
-    <div class="modal fade bd-example-modal-sm3" id="modal7" tabindex="-1" role="dialog"
-    aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content" style="align-items: center;">
-            <br>
-            <h3>Searching for Account...</h3>
-            <br>
-            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-            <dotlottie-player src="https://lottie.host/ad757d3f-a984-48f3-980f-7dcdaa8fc6f1/YCUzIEupZJ.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
-            <br>
-        </div>
-    </div>
-</div>
-
-<!-- Account found modal -->
-<div class="modal fade bd-example-modal-sm3" id="modal8" tabindex="-1" role="dialog"
-aria-labelledby="mySmallModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm">
-    <div class="modal-content" style="align-items: center;">
-        <br>
-        <h3>I found your account!</h3>
-        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-
-    <dotlottie-player src="https://lottie.host/634f2ff8-5405-4731-ad97-82a5607c0198/VBvzjRdkQn.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
-        <br>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Let's go.</button>
-
-        <br>
-    </div>
-</div>
-</div>
-
-<!-- table to display logged in user -->
-<div id="hidden" style="display: none;" >
-    <div class="container mt-4" style="text-align: left;">
-        <table class="table" style="color:white">
-            <tbody>
-                <tr>
-                    <td>Name:</td>
-                    <td id="foundName" type="text"></td>
-                </tr>
-                <tr>
-                    <td>Balance:</td>
-                    <td><p id="foundAge" type="number"></p></td>
-                </tr>
-                <tr>
-                    <td>Authenication Key:</td>
-                    <td id="foundID" type="text"></td>
-                </tr>
-                <tr>
-                    <td>
-
-                    </td>
-                    <td>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <center>
-    <div id="qrcode">
-    </div>
-    </center>
-    <br>
-
-</div>
-
-<!-- dont need this -->
-    <div id="findDetails" style="display: none;">
-        <h1>Find by ID</h1>
-        <h4>ID</h4>
-        <input id="findID" type="text"> <br><br>
-        <button id="find">FIND</button>
-        <h3 id="findName" type="text"></h3>
-        <h3 id="findAge" type="number"></h3> <br><br>
-        <h3 id="findPin" type="text"></h3> <br><br>
-    </div>
+    // Start button animation
+    setTimeout(() => {
+        startButton.classList.add('loaded');
+        setTimeout(() => {
+            logo.classList.add('animate');
+            appName.classList.add('animate');
+            tagline.classList.add('animate'); // Tagline woosh animation
+            
+        }, 500);
+    }, 2500);
+});
 
 
 
-<div style="display: none;">
-<button id="subtractButton1">-1</button>
-<button id="subtractButton2">-2</button>
-<button id="subtractButton3">-3</button>
-<br>
-<br>
-<button id="addButton1">+1</button>
-<button id="addButton2">+2</button>
-<button id="addButton3">+3</button>
-</div>
+$('.btn').on('click', toggleBtn);
 
-<br>
 
-<br>
+function toggleBtn() {
+  btn = this;
+  btn.classList.add('is-active');
+  
+  setTimeout(function () {
+      btn.classList.remove('is-active');
+  }, 2500)
+}
 
-<button class="btn btn-primary" onclick="window.open('sms:3609203542&body=Please give me more snack tokens. I am really hungry. <3')">Request more Tokens</button>
-<br>
-<br>
+
+
+
+
+
+
+  </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 
 </body>
+
 
 </html>
