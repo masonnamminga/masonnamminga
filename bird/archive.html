@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Smart Bird Feeder</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <br>
+  <!-- modal for the learn about birdfeeder button -->
+  <div class="modal fade" id="how" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">How was Smart Bird Feeder Made?</h5>
+        </div>
+        <div class="modal-body">
+          <center>
+            <img src="how.png" id="how-image" width="500">
+          </center>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- modal for sucessful request sent -->
+  <div class="modal fade" id="sent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Request Sent</h5>
+        </div>
+        <div class="modal-body">
+          <p>✅ Your request was sucessfully sent to the bird feeder.</p>
+          <p>⏯️ Click the <b>play button</b> on the livestream video.</p>
+          <p>⏱️ Wait about for the food to dispence. (5-10 second delay)</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal for error -->
+  <div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Error</h5>
+      </div>
+      <div class="modal-body">
+        <h5>👀 Looks like we're out of birdseed...</h5>
+        <p>Please let me know by clicking this button so I can get it refilled.</p>
+          <center>
+            <button style="background-color: #006100ad; color:white;" class="btn btn-primary" onclick="location.href='mailto:contact@masonnamminga.com?subject=Bird Feeder Out of Food&body=Please refill the birdfeeder with birdseed.'">Refill Birdseed</button>
+          </center>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <center>
+    <div style="margin-bottom: 10px;">
+      <img src="bird.png" alt="Bird" width="150" style="padding-top: 10px; margin-bottom: 10px;">
+      <h1 style="font-size: 67px; margin-top: 0;">Smart Bird Feeder</h1>
+    </div>
+  </center>
+
+
+
+  <div class="col-md-12" style="padding-top: 20px;">
+    <div class="col-md-12"
+      style="border-radius:15px; padding-top: 1px; box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.233);">
+      <div>
+        <h3>🤨 What is the Smart Bird Feeder?</h3>
+        <p>Introducing the Smart Bird Feeder, an Internet of Things (IoT) project by Mason Namminga <a
+            onclick="window.location.href = 'https://masonnamminga.com';"><i>(website)</i></a>. Simply fill out the form
+          below, click "Feed the Birds," and watch your bird food dispensed via live stream camera. All uses of the
+          birdfeeder are added to the "Who's fed the birds?" section. Hopefully some birds stop by!</p>
+        <p>1. ✏️ Fill out the "Feed the Birds" form, and <b>click the blue button.</b></p>
+        <p>2. ⏯️ Click the <b>play button</b> on the livestream video.</p>
+        <p>3. ⏱️ Wait about<b> 20 seconds</b> for the request to be sent to the bird feeder. <i>(Depends on network
+            connection)</i> </p>
+        <p>4. ✅ Done! Watch the bird food dispense, and your name added to the log below.</p>
+        <br>
+        <center>
+          <div style="display: inline-block;">
+            <button style="display: inline;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#how">How was Smart Bird Feeder Made</button>
+            <button style="background-color: #ff0000af; color:white;" type="button" class="btn" data-toggle="modal" data-target="#help">Food didn't dispense?</button>
+          </div>
+        </center>
+        <br>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-6" style="padding-top: 20px;">
+    <div class="col-md-12"
+      style="border-radius:15px; padding-top: 1px; box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.233);">
+      <h2>🎥 Real Time Stream</h2>
+      <div style="position: relative; padding-bottom: 56.25%; max-width: 900px; margin: 0 auto;">
+        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px;"
+          src="https://rtsp.me/embed/kH8TSeKb/" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <br>
+      <div style="text-align: center;">
+        <p>Check the stream time here ↗️ </p>
+        <div style="display: inline-block;">
+          <h4 style="display: inline;">Check real time here: </h4>
+          <h4 id="clock" style="display: inline;"></h4>
+        </div>
+        <p><i>Click "Play ⏯️" to start livestream. ⏱️ Livestream slightly behind.</i></p>
+        <div style="display: inline-block;">
+          <p style="display: inline; font-size: 10px; ">Having stream issues? </p>
+          <i>
+            <p onclick="location.reload()" style="display: inline; font-size: 10px;">Click here to refresh.</p>
+          </i>
+        </div>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6" style="padding-top: 20px;">
+    <div class="col-md-12"
+      style="border-radius:15px; padding-top: 1px; box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.233);">
+      <h2>🍽️ Feed the Birds</h2>
+      <form id="form_container" style="padding-bottom: 4px;">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" class="form-control" id="name" placeholder="🕺 Enter your full name">
+        </div>
+        <div class="form-group">
+          <label for="username">Display Name</label>
+          <input type="text" class="form-control" id="username"
+            placeholder="🕵️‍♂️ Enter your display name (3 characters max)" maxlength="3"
+            oninput="convertToUpperCase()">
+        </div>
+        
+        <div class="form-group">
+          <label for="datetime">Location</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="zip" placeholder="Type in ZIP and hit the button 👉">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" onclick="getUserCity(); ">🌎 Get Location ⠀⠀</button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="datetime">Date and Time:</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="time" placeholder="Tap for date & time 👉" readonly>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" onclick="fillCurrentTime()">🕰️ Get Date & Time</button>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="note">Note</label>
+          <input class="form-control" id="note" rows="3" placeholder="📝 Enter any optional notes here">
+        </div>
+        <center>
+          <button type="button" class="btn btn-primary btn-md " onclick="checkFieldsAndSave();" id="load1"
+            data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Request...">Feed the
+            Birds!</button>
+        </center>
+        <br>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-12" style="padding-top: 20px;">
+    <div class="col-md-12"
+      style="border-radius:15px; padding-top: 1px; box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.233);">
+      <div>
+        <h3>🔎 Who has fed the birds?</h3>
+        <p>To use the Smart Bird Feeder, complete the form above; all actions are logged below.
+        <div style="display: inline-block;">
+          <p style="display: inline;">The Smart Bird Feeder has be online for </p>
+          <i>
+            <p id="countup" style="display: inline;"></p>
+          </i>
+        </div>
+        <br>
+        <br>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Location</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+          <tbody id="tbody1"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-12" style="padding-top: 50px; text-align: center;">
+    <p><a href="mailto:contact@masonnamminga.com">Report a problem</a></p>
+    <button id="pword">🔐</button> 
+      <center>
+        <button style="display: none" id="admin" type="button" onclick="feedthem();">Feed the Birds</button>
+      </center>
+    <br>
+    <br>
+  </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+<script src="script.js"></script>
+
+
+</html>

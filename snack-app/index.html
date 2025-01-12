@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <title>Vend Snacks</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Baloo');
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .app-content, .add-to-homescreen {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+    .add-to-homescreen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('download.png') no-repeat center center;
+      background-size: cover;
+    }
+    .app-content {
+      text-align: center;
+    }
+
+
+
+
+
+
+
+
+    .loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.logo {
+    width: 0;
+    height: 0;
+    transition: width 1s, height 1s;
+}
+
+.loaded.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.animate.logo {
+    animation: wooshToTop 1s forwards;
+}
+
+.animate.app-name {
+    animation: wooshToTop 1s forwards;
+}
+
+.animate.start-button {
+    animation: moveToBounds 1s forwards;
+}
+
+.app-name {
+    font-size: 35px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 1s;
+    padding-top: 50px;
+    font: 3em/0 "Baloo";
+
+}
+
+.loaded.app-name {
+    opacity: 1;
+}
+
+.start-button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 1s;
+    zoom:150%;
+
+
+}
+
+.loaded.start-button {
+    opacity: 1;
+}
+
+@keyframes wooshToTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20vh);
+    }
+}
+
+@keyframes moveToBounds {
+    0% {
+        bottom: 20px;
+    }
+    100% {
+        bottom: 15vh;
+    }
+}
+.tagline {
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+    margin-top: 10px;
+}
+
+.loaded.tagline {
+    opacity: 1;
+}
+.animate.tagline {
+    animation: wooshToTop 1s forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+  position: relative;
+  background-color: #53B1FD;
+  color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  min-width: 200px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  outline: none;
+  box-shadow: 1px 1px 4px 1px transparent;
+  transition: box-shadow 300ms ease-in-out;
+}
+.btn:hover {
+  box-shadow: 1px 1px 6px 1px #ffffff;
+}
+.btn:before {
+  content: "";
+  position: absolute;
+  z-index: 500;
+  transform: rotateX(180deg);
+  color: #fff;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: none;
+}
+.btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  opacity: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color:#9A6AFE;
+  border-radius: 50px;
+  transition: width 10ms 600ms ease-in-out, background-color 300ms ease-in, opacity 250ms 300ms ease-in;
+}
+
+.is-active {
+  transform: rotateX(180deg);
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 1px transparent !important;
+  transition: transform 300ms ease-in-out, background-color 300ms ease-in;
+}
+.is-active:after {
+  opacity: 1;
+  background-color:#9A6AFE;
+  width: 100%;
+  transition: width 1s 0.5s ease-in-out, background-color 300ms 300ms ease-in, opacity 250ms 300ms ease-in;
+}
+.is-active:before {
+  opacity: 1;
+  transition: opacity 250ms 1.5s ease-in;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Add to Home Screen Fullscreen Image -->
+  <div class="add-to-homescreen"></div>
+
+  <!-- Main App Content -->
+  <div class="app-content">
+    <div class="loading-screen">
+        <div class="logo-container">
+            <img src="logo.png" alt="App Logo" class="logo">
+        </div>
+        <h1 class="app-name">Vend</h1>
+<h2 class="tagline">Smart snacking, done right.</h2>
+
+  
+        <div class="start-button">
+          <button class="btn">Start</button>
+
+        </div>
+        
+    </div>
+  </div>
+
+  <script>
+
+
+
+
+
+    // Function to detect if the app is running in standalone mode (added to home screen)
+    function isInStandaloneMode() {
+      return (window.navigator.standalone === true) || window.matchMedia('(display-mode: standalone)').matches;
+    }
+
+    // On page load, show content based on whether the app is installed
+    window.addEventListener('load', () => {
+      const addToHomeScreenPrompt = document.querySelector('.add-to-homescreen');
+      const appContent = document.querySelector('.app-content');
+
+      if (isInStandaloneMode()) {
+        appContent.classList.add('show');
+        addToHomeScreenPrompt.classList.remove('show');
+      } else {
+        addToHomeScreenPrompt.classList.add('show');
+      }
+    });
+
+
+
+    
+
+
+    window.addEventListener('load', () => {
+    const logo = document.querySelector('.logo');
+    const appName = document.querySelector('.app-name');
+    const tagline = document.querySelector('.tagline');
+    const startButton = document.querySelector('.start-button');
+
+    // Logo animation
+    setTimeout(() => {
+        logo.classList.add('loaded');
+    }, 500);
+
+    // App name animation
+    setTimeout(() => {
+        appName.classList.add('loaded');
+    }, 1500);
+
+    // Tagline animation (after the app name)
+    setTimeout(() => {
+        tagline.classList.add('loaded');
+    }, 2000);
+
+    // Start button animation
+    setTimeout(() => {
+        startButton.classList.add('loaded');
+        setTimeout(() => {
+            logo.classList.add('animate');
+            appName.classList.add('animate');
+            tagline.classList.add('animate'); // Tagline woosh animation
+            
+        }, 500);
+    }, 2500);
+});
+
+
+
+$('.btn').on('click', toggleBtn);
+
+
+function toggleBtn() {
+  btn = this;
+  btn.classList.add('is-active');
+  
+  setTimeout(function () {
+      btn.classList.remove('is-active');
+  }, 2500)
+}
+
+
+
+
+
+
+
+  </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+
+
+</html>
