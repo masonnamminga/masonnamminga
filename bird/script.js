@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function () {
+  // Wait for 1 second (1000 milliseconds)
+  setTimeout(function () {
+      // Show the modal
+      var delayedModal = new bootstrap.Modal(document.getElementById('delayedModal'));
+      delayedModal.show();
+  }, 1000);
+});
+
+
+
 //congfig for my google firebase database
 var firebaseConfig = {
 apiKey: "AIzaSyBA398n3Q1Xul0t3ZfRYBozkftB5O5pLbQ",
@@ -86,10 +97,10 @@ function save() {
 
     database.ref().update(updates);
     feedthem();
-    //shows the modal after 5 seconds (thats how long the loader is shown for)
+    //shows the modal after 1 seconds 
     setTimeout(function() {
     $('#sent').modal('show');
-  }, 3000);
+  }, 1500);
 }
 
 
@@ -101,105 +112,60 @@ function fillCurrentTime() {
         document.getElementById('time').value = timeString;
     }
 
-    function getUserCity() {
-      // Get the ZIP code from the input field
-      var zipCode = document.getElementById("zip").value;
   
-      // Make a request to the ZIP code API
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "https://api.zippopotam.us/us/" + zipCode, true);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          // Parse the JSON response
-          var response = JSON.parse(xhr.responseText);
-  
-          // Extract city and state information
-          var city = response.places[0]["place name"];
-          var state = response.places[0]["state"];
-  
-          // Update the input field with city and state
-          document.getElementById("zip").value = city + ", " + state;
-        }
-      };
-      xhr.send();
-    }
+ 
+// Function to get the current location and fill the input field
+function fillCurrentLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      // Extract latitude and longitude
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
 
+      // Use Nominatim API to reverse geocode the coordinates into a location
+      fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.address) {
+            // Extract town (city) and state from the API response
+            const town = data.address.city || data.address.town || data.address.village;
+            const state = data.address.state;
 
-//clock for real time vs stream time 
-//lets user see the stream time delay and decide if they need to refresh the page
-function updateClock() {
-    const clockElement = document.getElementById('clock');
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-
-    const timeString = `${hours}:${minutes}:${seconds}`;
-    clockElement.textContent = timeString;
-}
-
-setInterval(updateClock, 1000);
-
-updateClock();
-
-//this sets the display name to uppercase letters, this is just so it looks nice and match
-//the reason that you can only type three letters is becasue i can ony think of 3 bad words you can spell with letters compared to like 50 with four letters.
-function convertToUpperCase(event) {
-            var input = event.target;
-            input.value = input.value.toUpperCase();
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            var inputField = document.getElementById("username");
-            inputField.addEventListener("input", convertToUpperCase);
+            if (town && state) {
+              // Fill the input field with town and state
+              document.getElementById('zip').value = `${town}, ${state}`;
+            } else {
+              alert('Town and state not found for your location. Report error: contact@masonnamminga.com');
+            }
+          } else {
+            alert('Location not found. Report error: contact@masonnamminga.com');
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching location data:', error);
+          alert('Unable to retrieve location data. Report error: contact@masonnamminga.com');
         });
+    }, function() {
+      alert('Geolocation permission denied or not supported. Report error: contact@masonnamminga.com');
+    });
+  } else {
+    alert('Geolocation is not supported by this browser. Report error: contact@masonnamminga.com');
+  }
+}
+    
 
-//runs the uptime clock on the "who has fed the birds" section
-// this is when i made the website
-const targetDate = new Date("April 1, 2024 00:00:00").getTime();
-
-// update the count up timer every second
-const timer = setInterval(function() {
-    // get the current date and time
-    const now = new Date().getTime();
-
-    // calculate the difference between now and the target date
-    const difference = now - targetDate;
-
-    // calculate years, months, days, hours, minutes, and seconds
-    const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365));
-    const months = Math.floor((difference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-    const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-    // display the count up timer
-    document.getElementById("countup").innerHTML = years + " years, " + months + " months, " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds.";
-
-}, 1000);
-
-
-// does the little spin animation on the feed birds button
-$('#load1').on('click', function() {
-    var $this = $(this);
-    $this.button('loading');
-    setTimeout(function() {
-        $this.button('reset');
-    }, 3000);
-});
 
 //birdfeeder function i used to just use a fetch request but that stopped working in safari 
 
 function feedthem() {
   var xhr1 = new XMLHttpRequest();
-  xhr1.open('GET', 'https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=180', true);
+  xhr1.open('GET', 'https://ny3.blynk.cloud/external/api/update?token=yld7ZSxKUKs8WQrOjDHk4iAJbYitL250&v1=1', true);
   xhr1.onreadystatechange = function() {
     if (xhr1.readyState === 4 && xhr1.status === 200) {
       console.log('First request successful');
       setTimeout(function() {
         var xhr2 = new XMLHttpRequest();
-        xhr2.open('GET', 'https://ny3.blynk.cloud/external/api/update?token=rvzws28JzOyML_Sfi5boeAJ3V8n7kj6P&v0=0', true);
+        xhr2.open('GET', 'https://ny3.blynk.cloud/external/api/update?token=yld7ZSxKUKs8WQrOjDHk4iAJbYitL250&v1=0', true);
         xhr2.onreadystatechange = function() {
           if (xhr2.readyState === 4 && xhr2.status === 200) {
             console.log('Second request successful');
@@ -207,24 +173,16 @@ function feedthem() {
           }
         };
         xhr2.send();
-      }, 1000);
+      }, 5000);
     }
   };
   xhr1.send();
 }
 
 
-//this button is for testing the birdfeeder without having to use the form each time
-function promptPassword(event) {
-  event.preventDefault();
-  var password = prompt("🔐 Password Protected");
-  if (password === "123") {
-    document.getElementById("admin").style.display = "block";
-  } else {
-    alert("❌ Incorrect password.");
-  }
-}
-document.getElementById("pword").addEventListener("click", promptPassword);
+
+
+
 
 
 
