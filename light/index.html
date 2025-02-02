@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bobby the Lamp</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+</head>
+
+
+<body>
+
+    <div class="text-center my-3" style="padding: 1%;">
+        <h1>BOBBY THE LAMP</h1>
+    </div>
+
+    <div class="d-flex flex-row mx-5 my-2 justify-content-around flex-wrap" id="navbar">
+        <div>
+            <a href="../">
+                <img class="icon" src="../img/icons/home.png" alt="Home Icon">
+            </a>
+            <h2>home</h2>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/mason-namminga" target="_blank">
+                <img class="icon" src="../img/icons/connect.png" alt="Connect Icon">
+            </a>
+            <h2>let's connect</h2>
+        </div>
+        <div>
+            <a href="../portfolio/">
+                <img class="icon" src="../img/icons/portfolio.png" alt="Portfolio Icon">
+            </a>
+            <h2>portfolio</h2>
+        </div>
+        <div>
+            <a href="../light/">
+                <img class="icon" src="../img/icons/bobby.png" alt="Bobby Icon">
+            </a>
+            <h2>bobby the lamp</h2>
+        </div>
+        <div>
+            <a href="../live/">
+                <img class="icon" src="../img/icons/cam.png" alt="Live Stream Icon">
+            </a>
+            <h2>live "stream"</h2>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" style="padding: 5%;">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center" style="padding-bottom: 5%;">
+                <div class="ratio ratio-16x9" style="overflow: hidden;">
+                    <iframe src="https://www.youtube.com/embed/caRjTrbnpdo?si=uq1cH-ONIExFUndD"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            style="border-radius: 15px;"></iframe>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>💡 An interactive art piece for the internet.</h3>
+                <p class="text-justify" style="font-size: 1.1rem;">
+                    Bobby the Lamp is an interactive art display that demonstrates the unity of the internet. Bobby is an LED color-changing panel that can be changed to any color, from any location, by any person. While the world may feel huge, the goal of this project is to demonstrate how the network of computers that we call the internet can help make us more interconnected. “Bobby” has 600 individual LEDs, a central control box that handles all of the incoming web requests, a two-foot by four-foot frame, and a 1.5-millimeter polycarbonate diffuser that creates the glowing effect from the panel once a request is received. The panel is located in my home.                </p>
+                <div style="padding-bottom: 10%;">
+                    <center>
+                        <a class="btn btn-primary btn-gradient" href="#" data-bs-toggle="modal" data-bs-target="#about">Learn More ↗️</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <iframe class="bobbysite w-100" src="https://masonnamminga.github.io/bobbythelamp/"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="about" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">About Bobby the Lamp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+         
+                    <div class="row">
+                        <div class="col-md-6" >
+                            <img src="../img/photos/bobby1.jpeg" alt="" class="img-fluid" style="border-radius: 3%; width: 100%;">
+                        </div>
+                        <br>
+                       
+                        <div class="col-md-6">
+                            <img src="../img/photos/bobby2.jpeg" alt="" class="img-fluid" style="border-radius: 3%; width: 100%;">
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <h5>The Story</h5>
+                        <p style="color: black; font-family: Helvetica Neue; text-align: left;">
+                           Inspired by <a href="https://www.spireworks.org/about" target="_blank">interactive lighting🔗</a> on NYC buildings, I thought up the idea of “Bobby” the Lamp before I had the technical skills to bring the project into reality. A good friend of mine, <a href="https://jackgraddon.com/about/" target="_blank">Jack Graddon🔗</a>, helped create the user interface, while I built the frame, the "brain", and laid down the 150 feet of light strips. The diffuser is made from a repurposed plastic panel from a scrapped TV, and salvaged wood. The name “Bobby the Lamp” has no significant story. It was the project’s code name and just stuck around as we finalized the product. The light panel lives in my hallway where I love to see the colors shift when people log onto the site.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>© <span id="year"></span> Mason Namminga | <a href="mailto:contact@masonnamminga.com?subject=Website%20Reporting&body=We%20hit%20a%20snag...%20describe%20your%20issue%20here.">Report a Problem</a></a></p>
+    </footer>
+
+
+    <script src="../script.js" defer></script>
+
+</body>
+</html>

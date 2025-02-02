@@ -1,30 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .coming-soon {
-            text-align: center;
-        }
-        .coming-soon img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <script src="../script.js" defer></script> <!-- Ensure script loads after DOM -->
 </head>
+
 <body>
-    <div class="coming-soon">
-        <img src="200w.gif" alt="Coming Soon">
+
+
+    <div class="text-center my-3" style="padding: 1%;">
+        <h1>Hi there! 👋 Welcome to the Book Bot.</h1>
     </div>
+
+    <div class="d-flex flex-row mx-5 my-2 justify-content-around flex-wrap" id="navbar">
+        <div>
+            <a href="../">
+                <img class="icon" src="../img/icons/home.png">
+            </a>
+            <h2>home</h2>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/mason-namminga" target="_blank">
+                <img class="icon" src="../img/icons/connect.png">
+            </a>
+            <h2>let's connect</h2>
+        </div>
+        <div>
+            <a href="../portfolio/">
+                <img class="icon" src="../img/icons/portfolio.png">
+            </a>
+            <h2>portfolio</h2>
+        </div>
+        <div>
+            <a href="../light/">
+                <img class="icon" src="../img/icons/bobby.png">
+            </a>
+            <h2>bobby the lamp</h2>
+        </div>
+        <div>
+            <a href="../live/">
+                <img class="icon" src="../img/icons/cam.png">
+            </a>
+            <h2>live "stream"</h2>
+        </div>
+    </div>
+
+    <div class="row" style="padding: 3%;">
+        <div class="col-md-4" style="padding: 40px;">
+            <div class="row">
+                <div class="col-md-6">
+                    <center>
+                        <img alt="2017 Book Bot" src="../img/photos/2017.png" style="width: 170px; padding-bottom: 20px;" class="rounded">
+                    </center>
+                </div>
+                <div class="col-md-6">
+                    <h2 style="font-size: 30px;">Version One</h2>
+                    <p>
+                        The Book Bot started off in 2017 when I wanted to create a take-a-book, leave-a-book library for the neighborhood. Constructed from scrap plywood and a moving dolly the “Book Shack” was born.
+                    </p>
+                </div>
+            </div>
+            <br><br>
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-md-6">
+                    <center>
+                        <img alt="2022 Book Bot" src="../img/photos/2022.png" style="width: 170px; padding-bottom: 20px;" class="rounded">
+                    </center>
+                </div>
+                <div class="col-md-6" >
+                    <h2 style="font-size: 30px;">Version Two</h2>
+                    <p>
+                        In 2022, the Book Bot was updated with a new cabinet, improved lighting, a head featuring an integrated screen for displaying updates, and speakers that play calming music for passersby.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="padding: 40px;">
+            <h2 class="text-center" style="font-size: 25px;">Version Three: Where we're at...</h2>
+            <center>
+                <img alt="2024 Book Bot" src="../img/photos/2024.jpg" style="width: 255px; padding: 15px; border-radius: 20px;">
+            </center>
+            <h4 style="color:white"><b>New screen, doors, lights, & user interface... and a story printer too.</b></h4>
+            <p>
+                During the summer of 2024 the Book Bot was upgraded with better waterproofing, new doors, and best of all a new screen and user interface. The Book Bot now includes a receipt-style printer that can print visitors a bookmark, poem, or short story using the buttons under the screen. 
+            </p>
+        </div>
+        <div class="col-md-4" style="padding: 40px;">
+            <center>
+                <h2 style="font-size: 35px;">About the Book Bot</h2>
+            </center>
+            <h4 style="padding-top: 10px; color:white"><b>💡 The Inspiration </b></h4>
+            <p>I created the Book Bot because I wanted to merge three things that I love; reading, creating cool stuff, and my neighborhood. The Book Bot is the culmination of that. It started off as a scrap wood project before I knew anything about woodworking, coding, or electronics, and has now turned into an interactive robot library.</p>
+            <h4 style="padding-top: 10px; color:white"><b>✅ The Results </b></h4>
+            <p>I don’t know about you, but I think that the Book Bot turned out pretty cool. BRING BOOKS TO KEEP THE LIBRARY STOCKED!</p>
+            <h4 style="padding-top: 10px; color:white"><b>🔮 The Future </b></h4>
+            <p>
+                Each season, the Book Bot is refreshed with new cabinet lighting colors, music, and screen updates. The 
+                <a href="#" data-bs-toggle="modal" data-bs-target="#halloweenModal">Halloween display🔗</a> features ominous music, while Mariah Carey “defrosts” in late November with an iconic
+                <a href="#" data-bs-toggle="modal" data-bs-target="#christmasModal">Christmas display🔗</a>. 
+                The story printer also offers new stories and poems.
+            </p>
+            
+            <div class="modal fade" id="halloweenModal" tabindex="-1" aria-labelledby="halloweenModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="halloweenModalLabel">Book Bot Halloween Display</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <center>
+                                <img src="../img/photos/spookybookbot.jpeg" alt="Spooky Book Bot" style="border-radius: 10px; width: 375px;">
+                            </center>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="christmasModal" tabindex="-1" aria-labelledby="christmasModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="christmasModalLabel">Book Bot Holiday Display </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <center>
+                                <img src="../img/photos/christmasbookbot.jpeg" alt="Spooky Book Bot" style="border-radius: 10px; width: 375px;">
+                            </center>                      
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© <span id="year"></span> Mason Namminga | <a href="mailto:contact@masonnamminga.com?subject=Website%20Reporting&body=We%20hit%20a%20snag...%20describe%20your%20issue%20here.">Report a Problem</a> | <a href="../login">Login ↗️</a></p>
+    </footer>
+
 </body>
 </html>

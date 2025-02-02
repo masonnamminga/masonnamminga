@@ -38,13 +38,6 @@
       text-align: center;
     }
 
-
-
-
-
-
-
-
     .loading-screen {
     position: absolute;
     top: 0;
@@ -150,27 +143,6 @@
     animation: wooshToTop 1s forwards;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .btn {
   position: relative;
   background-color: #53B1FD;
@@ -258,30 +230,40 @@
   <script>
 
 
+// Function to detect if the app is running in standalone mode (added to home screen)
+function isInStandaloneMode() {
+  // Check if the device is in standalone mode
+  return (
+    (window.navigator.standalone === true) || 
+    window.matchMedia('(display-mode: standalone)').matches
+  );
+}
 
+// Function to check if the device is an iPhone using Safari
+function isSafariOniPhone() {
+  const ua = navigator.userAgent;
+  const isIPhone = /iPhone/.test(ua);
+  const isSafari = /Safari/.test(ua) && !/CriOS|FxiOS|OPiOS/.test(ua); // Exclude Chrome, Firefox, and Opera on iOS
+  return isIPhone && isSafari;
+}
 
+// On page load, show content based on whether the app is installed
+window.addEventListener('load', () => {
+  const addToHomeScreenPrompt = document.querySelector('.add-to-homescreen');
+  const appContent = document.querySelector('.app-content');
 
-    // Function to detect if the app is running in standalone mode (added to home screen)
-    function isInStandaloneMode() {
-      return (window.navigator.standalone === true) || window.matchMedia('(display-mode: standalone)').matches;
+  if (isSafariOniPhone()) {
+    if (isInStandaloneMode()) {
+      appContent.classList.add('show');
+      addToHomeScreenPrompt.classList.remove('show');
+    } else {
+      addToHomeScreenPrompt.classList.add('show');
     }
-
-    // On page load, show content based on whether the app is installed
-    window.addEventListener('load', () => {
-      const addToHomeScreenPrompt = document.querySelector('.add-to-homescreen');
-      const appContent = document.querySelector('.app-content');
-
-      if (isInStandaloneMode()) {
-        appContent.classList.add('show');
-        addToHomeScreenPrompt.classList.remove('show');
-      } else {
-        addToHomeScreenPrompt.classList.add('show');
-      }
-    });
-
-
-
-    
+  } else {
+    // For all other devices or browsers, show the app content
+    appContent.classList.add('show');
+  }
+});
 
 
     window.addEventListener('load', () => {
@@ -330,10 +312,6 @@ function toggleBtn() {
       btn.classList.remove('is-active');
   }, 2500)
 }
-
-
-
-
 
 
 
