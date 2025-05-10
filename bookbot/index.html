@@ -14,89 +14,30 @@
 <body>
 
 
-    <div class="text-center my-3" style="padding: 1%;">
-        <h1>Hi there! 👋 Welcome to the Book Bot.</h1>
+    <div>
+        <center>
+            <img alt="Book Bot" src="../img/photos/logo.png" style="width: 200px;">
+            <h1>Hi there! 👋 Welcome to the Book Bot.</h1>
+        </center>
     </div>
 
-    <div class="d-flex flex-row mx-5 my-2 justify-content-around flex-wrap" id="navbar">
-        <div>
-            <a href="../">
-                <img class="icon" src="../img/icons/home.png">
-            </a>
-            <h2>home</h2>
-        </div>
-        <div>
-            <a href="https://www.linkedin.com/in/mason-namminga" target="_blank">
-                <img class="icon" src="../img/icons/connect.png">
-            </a>
-            <h2>let's connect</h2>
-        </div>
-        <div>
-            <a href="../portfolio/">
-                <img class="icon" src="../img/icons/portfolio.png">
-            </a>
-            <h2>portfolio</h2>
-        </div>
-        <div>
-            <a href="../bobby/">
-                <img class="icon" src="../img/icons/bobby.png">
-            </a>
-            <h2>bobby the lamp</h2>
-        </div>
-        <div>
-            <a href="../live/">
-                <img class="icon" src="../img/icons/cam.png">
-            </a>
-            <h2>live "stream"</h2>
-        </div>
-    </div>
 
-    <div class="row" style="padding: 3%;">
-        <div class="col-md-4" style="padding: 40px;">
-            <div class="row">
-                <div class="col-md-6">
-                    <center>
-                        <img alt="2017 Book Bot" src="../img/photos/2017.png" style="width: 170px; padding-bottom: 20px;" class="rounded">
-                    </center>
-                </div>
-                <div class="col-md-6">
-                    <h2 style="font-size: 30px;">Version One</h2>
-                    <p>
-                        The Book Bot started off in 2017 when I wanted to create a take-a-book, leave-a-book library for the neighborhood. Constructed from scrap plywood and a moving dolly the “Book Shack” was born.
-                    </p>
-                </div>
-            </div>
-            <br><br>
-            <div class="row" style="padding-top: 20px;">
-                <div class="col-md-6">
-                    <center>
-                        <img alt="2022 Book Bot" src="../img/photos/2022.png" style="width: 170px; padding-bottom: 20px;" class="rounded">
-                    </center>
-                </div>
-                <div class="col-md-6" >
-                    <h2 style="font-size: 30px;">Version Two</h2>
-                    <p>
-                        In 2022, the Book Bot was updated with a new cabinet, improved lighting, a head featuring an integrated screen for displaying updates, and speakers that play calming music for passersby.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4" style="padding: 40px;">
-            <h2 class="text-center" style="font-size: 25px;">Version Three: Where we're at...</h2>
-            <center>
-                <img alt="2024 Book Bot" src="../img/photos/2024.jpg" style="width: 255px; padding: 15px; border-radius: 20px;">
-            </center>
-            <h4 style="color:white"><b>New screen, doors, lights, & user interface... and a story printer too.</b></h4>
-            <p>
-                During the summer of 2024 the Book Bot was upgraded with better waterproofing, new doors, and best of all a new screen and user interface. The Book Bot now includes a receipt-style printer that can print visitors a bookmark, poem, or short story using the buttons under the screen. 
-            </p>
-        </div>
+    <div class="row" style="padding-left: 3%; padding-right: 3%;">
+
         <div class="col-md-4" style="padding: 40px;">
             <center>
                 <h2 style="font-size: 35px;">About the Book Bot</h2>
             </center>
+            <h4 style="padding-top: 10px; color:white"><b>🔗 Let's Connect </b></h4>
+            <center>
+            <div class="d-flex justify-content-center" style="gap: 10px; padding: 10px;">
+                <a href="https://www.facebook.com/bookbotlibrary" target="_blank" class="btn btn-secondary">Follow on Facebook</a>
+                <a href="https://map.lflapp.org/4szDNNOk8Sb" target="_blank" class="btn btn-secondary">Little Free Library App</a>
+            </div>
+        </center>
+
             <h4 style="padding-top: 10px; color:white"><b>💡 The Inspiration </b></h4>
-            <p>I created the Book Bot because I wanted to merge three things that I love; reading, creating cool stuff, and my neighborhood. The Book Bot is the culmination of that. It started off as a scrap wood project before I knew anything about woodworking, coding, or electronics, and has now turned into an interactive robot library.</p>
+            <p>The Book Bot started off as a scrap wood project before I knew anything about woodworking, coding, or electronics, and has now turned into an interactive robot library.</p>
             <h4 style="padding-top: 10px; color:white"><b>✅ The Results </b></h4>
             <p>I don’t know about you, but I think that the Book Bot turned out pretty cool. BRING BOOKS TO KEEP THE LIBRARY STOCKED!</p>
             <h4 style="padding-top: 10px; color:white"><b>🔮 The Future </b></h4>
@@ -144,8 +85,90 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Updated Welcome Modal -->
+            <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg"> <!-- Added modal-lg for a larger modal -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="welcomeModalLabel">Let's connect.</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Typical Bootstrap close button -->
+                        </div>
+                        <div class="modal-body">
+                            <center>
+                            <h5>Check out the Book Bot on Facebook, or the Little Free Library App!</h5>
+                            <h5><i>Charter No. 204642</i></h5>
+                            <hr>
+                            <div style="padding: 10px;">
+                                <a href="https://www.facebook.com/bookbotlibrary" target="_blank" class="btn btn-secondary" >Follow on Facebook</a>
+
+                            </div>
+                            <div style="padding: 10px;">
+                                <a href="https://map.lflapp.org/4szDNNOk8Sb" target="_blank" class="btn btn-secondary" >Little Free Library App</a>
+
+                            </div>
+                            <br>
+
+                            </center>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> <!-- Footer close button -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Show the modal 5 seconds after the page loads
+                window.addEventListener('load', function () {
+                    setTimeout(function () {
+                        var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+                        welcomeModal.show();
+                    }, 3000);
+                });
+            </script>
         </div>
     </div>
+
+        <div class="col-md-4" style="padding: 40px;">
+            <div class="row">
+                <div class="col-md-6">
+                    <center>
+                        <img alt="2017 Book Bot" src="../img/photos/2017.png" style="width: 170px; padding-bottom: 20px;" class="rounded">
+                    </center>
+                </div>
+                <div class="col-md-6">
+                    <h2 style="font-size: 30px;">Version One</h2>
+                    <p>
+                        The Book Bot started off in 2017 when I wanted to create a take-a-book, leave-a-book library for the neighborhood. Constructed from scrap plywood and a moving dolly the “Book Shack” was born.
+                    </p>
+                </div>
+            </div>
+            <br><br>
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-md-6">
+                    <center>
+                        <img alt="2022 Book Bot" src="../img/photos/2022.png" style="width: 170px; padding-bottom: 20px;" class="rounded">
+                    </center>
+                </div>
+                <div class="col-md-6" >
+                    <h2 style="font-size: 30px;">Version Two</h2>
+                    <p>
+                        In 2022, the Book Bot was updated with a new cabinet, improved lighting, a head featuring an integrated screen for displaying updates, and speakers that play calming music for passersby.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="padding: 40px;">
+            <h2 class="text-center" style="font-size: 25px;">Version Three: Where we're at...</h2>
+            <center>
+                <img alt="2024 Book Bot" src="../img/photos/2024.jpg" style="width: 255px; padding: 15px; border-radius: 20px;">
+            </center>
+            <h4 style="color:white"><b>New screen, doors, lights, & user interface...<br>plus a story printer & photobooth too.</b></h4>
+            <p>
+                During the Summer of 2024, and Spring of 2025 the Book Bot was upgraded with better waterproofing, new doors, and best of all a new screen and user interface. The Book Bot now includes a printer that can print you a poem, or short story from the click of a button. It also has a photobooth camera too.
+            </p>
+        </div>
+ 
 
     <footer>
         <p>© <span id="year"></span> Mason Namminga | <a href="mailto:contact@masonnamminga.com?subject=Website%20Reporting&body=We%20hit%20a%20snag...%20describe%20your%20issue%20here.">Report a Problem</a></p>
