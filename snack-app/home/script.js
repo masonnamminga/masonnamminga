@@ -1,4 +1,3 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
 
@@ -340,27 +339,48 @@ function addAge3() {
 }
 
 
-//make the QR code
-
+// make the QR code (safer: check for DOM + QR lib, use MutationObserver)
 function generateQRCode() {
-    var element = document.getElementById("foundID");
-    var qrcode = new QRCode("qrcode", {
-        text: element.innerHTML,
+    const element = document.getElementById("foundID");
+    const container = document.getElementById("qrcode");
+
+    if (!element || !container) {
+        console.warn("QR: missing #foundID or #qrcode in DOM");
+        return;
+    }
+    if (typeof QRCode === "undefined") {
+        console.warn("QR: QRCode library not loaded");
+        return;
+    }
+
+    // clear any previous
+    container.innerHTML = "";
+
+    const qrcode = new QRCode(container, {
+        text: (element.textContent || element.innerText || "").trim(),
         width: 300,
         height: 300,
-        colorDark : "black",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
+        colorDark: "black",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
     });
 
-    element.addEventListener('DOMSubtreeModified', function() {
+    // Use MutationObserver instead of DOMSubtreeModified
+    const observer = new MutationObserver(() => {
+        const value = (element.textContent || element.innerText || "").trim();
         qrcode.clear();
-        qrcode.makeCode(element.innerHTML);
+        qrcode.makeCode(value);
     });
+
+    observer.observe(element, { childList: true, subtree: true, characterData: true });
 }
 
-generateQRCode();
-
+// ensure generateQRCode runs after DOM is ready (and after qrcode lib is loaded — scripts reordered)
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", generateQRCode);
+} else {
+    generateQRCode();
+}
 
 function showDiv() {
     var x = document.getElementById("hidden");
