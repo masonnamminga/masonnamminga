@@ -662,6 +662,19 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.addEventListener("DOMContentLoaded", function () {
+    // Check if URL contains a hash like #modal1
+    if (window.location.hash) {
+      let modalId = window.location.hash;
+      let modalElement = document.querySelector(modalId);
+
+      if (modalElement) {
+        let modal = new bootstrap.Modal(modalElement);
+        modal.show();
+      }
+    }
+  });
     </script>
 </body>
 
