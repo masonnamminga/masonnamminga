@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>doodle printer</title>
+    <style>
+      .help {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+
+
+
+    <main>
+
+        <center>
+          <img src="./doodle/logo.gif" alt="Logo" width="300px" style="padding: 10px;" />
+     <br>
+        <img src="./doodle/print.gif" alt="Logo" width="200px" />
+           <h2>Send something to my printer :)</h2>
+        <p>***********************************************</p>
+
+            <p>1. Click the button below to send an email to: doodle@heymason.page.<br>2. Attach a doodle/picture or type a message.<br>3. Once you hit send, it'll print on my mini recipt printer!</p>
+
+
+        <p>***********************************************</p>
+        <a href="mailto:doodle@heymason.page?subject=&body=** DELETE THIS TEXT and add your message to be printed ** Click the pencil icon above the keyboard in the Apple email app to doodle (or attach a photo).**">
+          <img src="./doodle/send.gif" alt="Send email" width="250" />
+        </a>
+          <p><i>this button right here</i></p>
+        <p>***********************************************</p>
+          <button id="show-help">show tutorial</button>
+          <div class="help" id="help-content">
+   
+            <p>Email Tutorial (iPhone)</p>
+            <p>Note: If you can't draw in your Mail app, try using the Notes app instead, or attach a photo.</p>
+            <img src="./doodle/button.png" alt="Logo" width="200px" />
+            <p>Use the pencil button to draw.</p>
+            <img src="./doodle/tutorial.gif" alt="Logo" width="200px" />
+
+        <p>***********************************************</p>
+          </div>
+                <p><i>© 2026 Mason Namminga | <a href="https://heymason.page" target="_blank">home</i></a></p>
+</center>
+      </section>
+    </main>
+
+  <script>
+    document.getElementById('show-help').addEventListener('click', function () {
+      document.getElementById('help-content').style.display = 'block';
+      this.style.display = 'none';
+    });
+  </script>
+
+  </body>
+</html>
