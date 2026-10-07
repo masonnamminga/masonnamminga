@@ -4,175 +4,175 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book Bot</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <script src="../script.js" defer></script> <!-- Ensure script loads after DOM -->
+    <!-- Single matching Bootstrap bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="../script.js" defer></script>
 </head>
 
 <body>
 
+    <!-- Header -->
+    <header class="text-center pt-3">
+        <img alt="Book Bot" src="../img/photos/logo.png" class="img-fluid" style="max-width: 200px;">
+        <h1 class="px-3">Welcome to the Bookbot, a Neighborhood Library</h1>
+    </header>
 
-    <div>
-        <center>
-            <img alt="Book Bot" src="../img/photos/logo.png" style="width: 200px;">
-            <h1>Hi there! 👋 Welcome to the Book Bot.</h1>
-        </center>
-    </div>
+    <main class="container-fluid px-3 px-md-5">
 
+        <!-- ROW 1: About + Version 5 -->
+        <div class="row g-5 py-5 px-lg-4">
 
-    <div class="row" style="padding-left: 3%; padding-right: 3%;">
+            <!-- About the Book Bot -->
+            <section class="col-12 col-lg-6">
+                <h2 class="text-center" style="font-size: 35px;">About the Bookbot</h2>
+           
 
-        <div class="col-md-4" style="padding: 40px;">
-            <center>
-                <h2 style="font-size: 35px;">About the Book Bot</h2>
-            </center>
-            <h4 style="padding-top: 10px; color:white"><b>🔗 Let's Connect </b></h4>
-            <center>
-            <div class="d-flex justify-content-center" style="gap: 10px; padding: 10px;">
-                <a href="https://www.facebook.com/bookbotlibrary" target="_blank" class="btn btn-secondary">Follow on Facebook</a>
-                <a href="https://map.lflapp.org/4szDNNOk8Sb" target="_blank" class="btn btn-secondary">Little Free Library App</a>
-            </div>
-        </center>
+                <h4 class="pt-2" style="color: white;"><b>Let's Connect</b> <br>Little Free Library | <i>Charter No. 204642</i></h4>
 
-            <h4 style="padding-top: 10px; color:white"><b>💡 The Inspiration </b></h4>
-            <p>The Book Bot started off as a scrap wood project before I knew anything about woodworking, coding, or electronics, and has now turned into an interactive robot library.</p>
-            <h4 style="padding-top: 10px; color:white"><b>✅ The Results </b></h4>
-            <p>I don’t know about you, but I think that the Book Bot turned out pretty cool. BRING BOOKS TO KEEP THE LIBRARY STOCKED!</p>
-            <h4 style="padding-top: 10px; color:white"><b>🔮 The Future </b></h4>
-            <p>
-                Each season, the Book Bot is refreshed with new cabinet lighting colors, music, and screen updates. The 
-                <a href="#" data-bs-toggle="modal" data-bs-target="#halloweenModal">Halloween display🔗</a> features ominous music, while Mariah Carey “defrosts” in late November with an iconic
-                <a href="#" data-bs-toggle="modal" data-bs-target="#christmasModal">Christmas display🔗</a>. 
-                The story printer also offers new stories and poems.
-            </p>
-            
-            <div class="modal fade" id="halloweenModal" tabindex="-1" aria-labelledby="halloweenModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="halloweenModalLabel">Book Bot Halloween Display</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <center>
-                                <img src="../img/photos/spookybookbot.jpeg" alt="Spooky Book Bot" style="border-radius: 10px; width: 375px;">
-                            </center>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+                <div class="d-flex flex-wrap justify-content-center gap-2 py-2">
+                    <a href="https://www.facebook.com/bookbotlibrary" target="_blank" class="btn btn-secondary">Follow on Facebook</a>
+                    <a href="https://map.lflapp.org/4szDNNOk8Sb" target="_blank" class="btn btn-secondary">Little Free Library App</a>
+                </div>
+
+                <h4 class="pt-2" style="color: white;"><b>The Inspiration</b></h4>
+                <p>The Bookbot started off as a scrap wood project before I knew anything about woodworking, coding, or electronics, and has now turned into an interactive robot library.</p>
+
+                <h4 class="pt-2" style="color: white;"><b>The Results</b></h4>
+                <p>I don’t know about you, but I think that the Bookbot turned out pretty cool. BRING BOOKS TO KEEP THE LIBRARY STOCKED!</p>
+
+                <h4 class="pt-2" style="color: white;"><b>The Future</b></h4>
+                <p>
+                    Each season, the Bookbot is refreshed with new cabinet lighting colors, music, and screen updates. The
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#halloweenModal">Halloween display🔗</a> features ominous music, while Mariah Carey “defrosts” in late November with an iconic
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#christmasModal">Christmas display🔗</a>.
+                    The story printer also offers new stories and poems.
+                </p>
+            </section>
+
+            <!-- Version 5 -->
+            <section class="col-12 col-lg-6 text-center text-lg-start">
+                <h2 class="text-center">Version Five: Where we're at...</h2>
+                <div class="text-center">
+                    <img alt="2026 Book Bot" src="./img/photos/2026.jpg" class="img-fluid" style="max-width: 315px; padding: 15px; border-radius: 20px;">
+                </div>
+                <h4 class="pt-2" style="color: white;"><b>An all new (more weatherproof) Bookbot + A PHOTOBOOTH!</b></h4>
+                <p>
+                    Due to a water leak, the Bookbot sustained substantial mold damage during the winter. The new 2026 cabinet has increased waterproofing measures, as well as a smaller footprint. It’s ready for whatever the soggy PNW weather throws at it.
+                </p>
+            </section>
+        </div>
+
+        <!-- ROW 2: Versions 1-4 -->
+        <div class="row g-5 pt-4 pb-5 px-lg-4">
+
+            <section class="col-12 col-md-6 col-xl-3 text-center text-md-start">
+                <div class="text-center">
+                    <img alt="2017 Book Bot" src="./img/photos/2017.png" class="img-fluid" style="max-width: 220px; padding: 15px; border-radius: 20px;">
+                </div>
+                <h2>Version One</h2>
+                <p>
+                    The Bookbot started off in 2017 when I wanted to create a take-a-book, leave-a-book library for the neighborhood. Constructed from scrap plywood and a moving dolly the “Book Shack” was created.
+                </p>
+            </section>
+
+            <section class="col-12 col-md-6 col-xl-3 text-center text-md-start">
+                <div class="text-center">
+                    <img alt="2021 Book Bot" src="./img/photos/2021.jpeg" class="img-fluid" style="max-width: 220px; padding: 15px; border-radius: 20px;">
+                </div>
+                <h2>Version Two</h2>
+                <p>
+                    In June of 2021, the Bookbot was remade. It included plastic doors, a larger cabinet, and a robot head with a sound module that would talk when different buttons were pressed.
+                </p>
+            </section>
+
+            <section class="col-12 col-md-6 col-xl-3 text-center text-md-start">
+                <div class="text-center">
+                    <img alt="2022 Book Bot" src="./img/photos/2022.png" class="img-fluid" style="max-width: 220px; padding: 15px; border-radius: 20px;">
+                </div>
+                <h2>Version Three</h2>
+                <p>
+                    In 2022, the Book Bot was updated with a new cabinet, improved lighting, a head featuring an integrated screen for displaying updates, and speakers that play calming music for passersby.
+                </p>
+            </section>
+
+            <section class="col-12 col-md-6 col-xl-3 text-center text-md-start">
+                <div class="text-center">
+                    <img alt="2024 Book Bot" src="./img/photos/2024.jpg" class="img-fluid" style="max-width: 220px; padding: 15px; border-radius: 20px;">
+                </div>
+                <h2>Version Four</h2>
+                <p>
+                    During the Summer of 2024 the Bookbot was upgraded with better waterproofing, new doors, and a new screen. It included a thermal printer that can dispense a poem as well as a photobooth camera.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal fade" id="halloweenModal" tabindex="-1" aria-labelledby="halloweenModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="halloweenModalLabel">Book Bot Halloween Display</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="../img/photos/spookybookbot.jpeg" alt="Spooky Book Bot" class="img-fluid" style="border-radius: 10px; max-width: 375px;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
-
-            <div class="modal fade" id="christmasModal" tabindex="-1" aria-labelledby="christmasModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="christmasModalLabel">Book Bot Holiday Display </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <center>
-                                <img src="../img/photos/christmasbookbot.jpeg" alt="Spooky Book Bot" style="border-radius: 10px; width: 375px;">
-                            </center>                      
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Updated Welcome Modal -->
-            <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg"> <!-- Added modal-lg for a larger modal -->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="welcomeModalLabel">Let's connect.</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Typical Bootstrap close button -->
-                        </div>
-                        <div class="modal-body">
-                            <center>
-                            <h5>Check out the Book Bot on Facebook, or the Little Free Library App!</h5>
-                            <h5><i>Charter No. 204642</i></h5>
-                            <hr>
-                            <div style="padding: 10px;">
-                                <a href="https://www.facebook.com/bookbotlibrary" target="_blank" class="btn btn-secondary" >Follow on Facebook</a>
-
-                            </div>
-                            <div style="padding: 10px;">
-                                <a href="https://map.lflapp.org/4szDNNOk8Sb" target="_blank" class="btn btn-secondary" >Little Free Library App</a>
-
-                            </div>
-                            <br>
-
-                            </center>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> <!-- Footer close button -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <script>
-                // Show the modal 5 seconds after the page loads
-                window.addEventListener('load', function () {
-                    setTimeout(function () {
-                        var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
-                        welcomeModal.show();
-                    }, 3000);
-                });
-            </script>
         </div>
     </div>
 
-        <div class="col-md-4" style="padding: 40px;">
-            <div class="row">
-                <div class="col-md-6">
-                    <center>
-                        <img alt="2017 Book Bot" src="../img/photos/2017.png" style="width: 170px; padding-bottom: 20px;" class="rounded">
-                    </center>
+    <div class="modal fade" id="christmasModal" tabindex="-1" aria-labelledby="christmasModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="christmasModalLabel">Book Bot Holiday Display</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="col-md-6">
-                    <h2 style="font-size: 30px;">Version One</h2>
-                    <p>
-                        The Book Bot started off in 2017 when I wanted to create a take-a-book, leave-a-book library for the neighborhood. Constructed from scrap plywood and a moving dolly the “Book Shack” was born.
-                    </p>
+                <div class="modal-body text-center">
+                    <img src="../img/photos/christmasbookbot.jpeg" alt="Christmas Book Bot" class="img-fluid" style="border-radius: 10px; max-width: 375px;">
                 </div>
-            </div>
-            <br><br>
-            <div class="row" style="padding-top: 20px;">
-                <div class="col-md-6">
-                    <center>
-                        <img alt="2022 Book Bot" src="../img/photos/2022.png" style="width: 170px; padding-bottom: 20px;" class="rounded">
-                    </center>
-                </div>
-                <div class="col-md-6" >
-                    <h2 style="font-size: 30px;">Version Two</h2>
-                    <p>
-                        In 2022, the Book Bot was updated with a new cabinet, improved lighting, a head featuring an integrated screen for displaying updates, and speakers that play calming music for passersby.
-                    </p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-4" style="padding: 40px;">
-            <h2 class="text-center" style="font-size: 25px;">Version Three: Where we're at...</h2>
-            <center>
-                <img alt="2024 Book Bot" src="../img/photos/2024.jpg" style="width: 255px; padding: 15px; border-radius: 20px;">
-            </center>
-            <h4 style="color:white"><b>New screen, doors, lights, & user interface...<br>plus a story printer & photobooth too.</b></h4>
-            <p>
-                During the Summer of 2024, and Spring of 2025 the Book Bot was upgraded with better waterproofing, new doors, and best of all a new screen and user interface. The Book Bot now includes a printer that can print you a poem, or short story from the click of a button. It also has a photobooth camera too.
-            </p>
-        </div>
- 
+    </div>
 
-    <footer>
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="welcomeModalLabel">Let's connect.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <h5>Check out the Book Bot on Facebook, or the Little Free Library App!</h5>
+           
+                    <hr>
+                    <div class="d-grid d-sm-flex justify-content-center gap-2">
+                        <a href="https://www.facebook.com/bookbotlibrary" target="_blank" class="btn btn-secondary">Follow on Facebook</a>
+                        <a href="https://map.lflapp.org/4szDNNOk8Sb" target="_blank" class="btn btn-secondary">Little Free Library App</a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3">
         <p>© <span id="year"></span> Mason Namminga | <a href="mailto:contact@masonnamminga.com?subject=Website%20Reporting&body=We%20hit%20a%20snag...%20describe%20your%20issue%20here.">Report a Problem</a></p>
     </footer>
+
+
 
 </body>
 </html>
